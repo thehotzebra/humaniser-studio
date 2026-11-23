@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humaniser — Design with a human touch.</title>
+<meta name="description" content="Humaniser redesigns your poster, flyer or social graphic with a professional human touch. Upload an image, get a redesigned PNG.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f7f2e9'/%3E%3Ccircle cx='32' cy='40' r='10' fill='%23d9482b'/%3E%3Cpath d='M22 30 Q32 12 42 30' stroke='%23211d16' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+html,body{margin:0;padding:0;background:#f7f2e9;color:#211d16;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<style>.hm-masthead-wrap{max-width:1060px;margin:0 auto;padding:28px clamp(18px,4vw,48px) 0;box-sizing:border-box}.hm-masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid #211d16;padding-bottom:14px;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif}.hm-wordmark{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:26px;letter-spacing:-.02em;color:#211d16;text-decoration:none}.hm-wordmark .hm-dot{color:#d9482b}.hm-masthead-tag{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#6f6555}@media(max-width:720px){.hm-masthead-tag{display:none}}</style><div class="hm-masthead-wrap"><div class="hm-masthead"><a class="hm-wordmark" href="/" aria-label="Humaniser home">humaniser<span class="hm-dot">.</span></a><span class="hm-masthead-tag">ai redesign studio</span></div></div>
+<main>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+.hm-page{max-width:1060px;margin:0 auto;padding:8px clamp(18px,4vw,48px) 40px;position:relative;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif;color:#211d16}
+.hm-page *{box-sizing:border-box}
+.hm-page [hidden]{display:none!important}
+.hm-page .grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hm-page .hm-hero{padding:clamp(36px,7vh,72px) 0 8px}
+.hm-page h1{font-family:'Fraunces',Georgia,serif;font-weight:480;font-size:clamp(42px,7.2vw,76px);line-height:1.02;letter-spacing:-.025em;margin:0 0 22px;max-width:14ch;color:#211d16}
+.hm-page h1 .human{font-style:italic;font-weight:560;color:#d9482b;position:relative;display:inline-block}
+.hm-page h1 .underline{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.18em;color:#d9482b;opacity:.85}
+.hm-page .lede{font-size:clamp(16px,2vw,19px);line-height:1.55;color:#6f6555;max-width:54ch;margin:0}
+.hm-page .banner{margin:22px 0 0;padding:12px 16px;border:1.5px solid #ddd2bd;border-left:4px solid #d9482b;background:#fffdf8;border-radius:8px;font-size:15px}
+.hm-page .studio{margin-top:clamp(26px,4vh,44px)}
+.hm-page .dropzone{border:2px dashed #ddd2bd;border-radius:16px;background:#fffdf8;min-height:280px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .2s ease;padding:22px}
+.hm-page .dropzone:hover,.hm-page .dropzone:focus-visible{border-color:#211d16;outline:none}
+.hm-page .dropzone.over{border-color:#d9482b;background:#fdf3ec;transform:scale(1.005)}
+.hm-page .dropzone.has-image{border-style:solid}
+.hm-page .dropzone-empty{text-align:center;color:#6f6555}
+.hm-page .frame-icon{display:block;width:52px;height:52px;color:#d9482b;margin:0 auto 14px}
+.hm-page .drop-title{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:560;color:#211d16;margin:0 0 6px}
+.hm-page .drop-sub{font-size:14px;margin:0}
+.hm-page .preview{margin:0;text-align:center}
+.hm-page .preview img{max-height:380px;max-width:100%;border-radius:8px;box-shadow:0 14px 34px -18px rgba(33,29,22,.45)}
+.hm-page .preview figcaption{margin-top:12px;font-size:13px;color:#6f6555;word-break:break-all}
+.hm-page .cta{display:inline-block;margin-top:22px;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif;font-weight:700;font-size:17px;letter-spacing:.01em;color:#fffdf8;background:#d9482b;border:2px solid #211d16;border-radius:12px;padding:15px 34px;cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 #211d16;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.hm-page .cta:hover:not(:disabled){background:#b93a20;transform:translate(-1px,-1px);box-shadow:6px 6px 0 #211d16}
+.hm-page .cta:active:not(:disabled){transform:translate(2px,2px);box-shadow:1px 1px 0 #211d16}
+.hm-page .cta:disabled{opacity:.45;cursor:not-allowed;box-shadow:2px 2px 0 #6f6555}
+.hm-page .inline-error{color:#b93a20;font-size:15px;margin-top:14px}
+.hm-page .working{display:flex;gap:26px;align-items:center;background:#fffdf8;border:2px solid #211d16;border-radius:16px;padding:26px;box-shadow:5px 5px 0 #efe7d8}
+.hm-page .working-thumb{width:130px;max-height:170px;object-fit:cover;border-radius:8px;filter:saturate(.85);flex-shrink:0}
+.hm-page .working-status{flex:1;min-width:0}
+.hm-page .pulse{display:inline-block;width:11px;height:11px;border-radius:50%;background:#d9482b;animation:hmpulse 1.4s ease-in-out infinite;margin-bottom:10px}
+@keyframes hmpulse{0%,to{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+.hm-page .stage{font-family:'Fraunces',Georgia,serif;font-size:23px;font-weight:560;margin:0 0 6px}
+.hm-page .stage-sub{font-size:14px;color:#6f6555;margin:0 0 16px;min-height:1.5em}
+.hm-page .stage-hint{font-size:12px;color:#6f6555;margin:10px 0 0}
+.hm-page .bar{height:5px;background:#efe7d8;border-radius:3px;overflow:hidden}
+.hm-page .bar span{display:block;height:100%;width:38%;background:#d9482b;border-radius:3px;animation:hmslide 1.8s ease-in-out infinite}
+@keyframes hmslide{0%{transform:translate(-110%)}to{transform:translate(290%)}}
+.hm-page .pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.hm-page .pair figure{margin:0;position:relative}
+.hm-page .pair img{width:100%;display:block;border-radius:10px;border:2px solid #211d16;background:#fffdf8}
+.hm-page .chip{position:absolute;top:-12px;left:14px;z-index:2;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#211d16;color:#f7f2e9;padding:5px 12px;border-radius:999px}
+.hm-page .chip.accent{background:#d9482b}
+.hm-page .verify-note{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:15px;color:#6f6555;margin:20px 0 0;line-height:1.5}
+.hm-page .qc-badge{display:inline-block;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-right:10px;background:#f3e3d3;color:#b93a20;vertical-align:middle}
+.hm-page .qc-badge.ok{background:#dce8df;color:#2f5d46}
+.hm-page .verify-note.ok{color:#2f5d46}
+.hm-page .result-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:18px}
+.hm-page .result-actions .cta{margin-top:0}
+.hm-page .cta.download{background:#211d16}
+.hm-page .cta.download:hover{background:#000}
+.hm-page .ghost{background:none;border:none;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:#6f6555;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:8px 0}
+.hm-page .ghost:hover{color:#211d16}
+.hm-page .errorbox{background:#fffdf8;border:2px solid #d9482b;border-radius:16px;padding:26px}
+.hm-page .error-title{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;margin:0 0 8px}
+.hm-page .errorbox p{margin:0 0 6px;line-height:1.5}
+.hm-page .hm-reveal{animation:hmrise .7s cubic-bezier(.2,.7,.2,1) backwards}
+.hm-page .hm-r1{animation-delay:.08s}
+.hm-page .hm-r2{animation-delay:.18s}
+.hm-page .hm-r3{animation-delay:.3s}
+@keyframes hmrise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.hm-page .hm-reveal{animation:none}.hm-page .pulse,.hm-page .bar span{animation:none}}
+@media(max-width:720px){.hm-page{padding-bottom:24px}.hm-page .dropzone{min-height:220px}.hm-page .pair{grid-template-columns:1fr}.hm-page .working{flex-direction:column;align-items:flex-start}.hm-page .working-thumb{width:100%;max-height:220px}}
+.hm-page .hm-hero{text-align:center}
+.hm-page h1{margin-left:auto;margin-right:auto}
+.hm-page .lede{margin-left:auto;margin-right:auto}
+.hm-page .banner{text-align:center}
+.hm-page #hm-idle{text-align:center}
+.hm-page .work-head{justify-content:center}
+.hm-page .working-status{text-align:center}
+.hm-page .verify-note{text-align:center}
+.hm-page .result-actions{justify-content:center}
+.hm-page .errorbox{text-align:center}
+</style>
+<div class="hm-page">
+  <div class="grain" aria-hidden="true"></div>
+  <section class="hm-hero">
+    <h1 class="hm-reveal hm-r1">Design with a<br><em class="human">human<svg class="underline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 60 3, 150 3, 216 8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em> touch.</h1>
+    <p class="lede hm-reveal hm-r2">Upload a poster, flyer or social graphic. Humaniser reads it like a creative director and redesigns it — keeping every name, date, price and logo exactly where it belongs.</p>
+  </section>
+  <p class="banner hm-reveal hm-r2" id="hm-banner" role="status" hidden></p>
+  <section class="studio hm-reveal hm-r3">
+    <div id="hm-idle">
+      <div id="hm-drop" class="dropzone" role="button" tabindex="0" aria-label="Upload an image">
+        <input id="hm-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        <div class="dropzone-empty" id="hm-empty">
+          <svg viewBox="0 0 48 48" class="frame-icon" aria-hidden="true"><rect x="6" y="8" width="36" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="18" cy="19" r="4" fill="currentColor"/><path d="M10 34 L22 24 L30 31 L36 26 L42 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="drop-title">Drop your image here</p>
+          <p class="drop-sub">or click to browse · PNG, JPG, WebP · up to 10 MB</p>
+        </div>
+        <figure class="preview" id="hm-preview" hidden>
+          <img id="hm-preview-img" alt="Your uploaded design">
+          <figcaption id="hm-preview-cap"></figcaption>
+        </figure>
+      </div>
+      <button class="cta" id="hm-go" type="button" disabled>Humanise My Image</button>
+      <p class="inline-error" id="hm-inline-error" role="alert" hidden></p>
+    </div>
+    <div class="working" id="hm-working" aria-live="polite" hidden>
+      <img class="working-thumb" id="hm-working-thumb" alt="Design being redesigned">
+      <div class="working-status">
+        <span class="pulse" aria-hidden="true"></span>
+        <p class="stage" id="hm-stage">Uploading your image</p>
+        <p class="stage-sub" id="hm-stage-sub">Keeping every name, date, price and logo exactly where it belongs.</p>
+        <div class="bar"><span></span></div>
+        <p class="stage-hint">Usually one to three minutes · keep this tab open</p>
+      </div>
+    </div>
+    <div class="result" id="hm-result" aria-live="polite" hidden>
+      <div class="pair">
+        <figure><span class="chip">Original</span><img id="hm-orig" alt="Original design"></figure>
+        <figure><span class="chip accent">Humanised</span><img id="hm-redesigned" alt="Redesigned result"></figure>
+      </div>
+      <p class="verify-note" id="hm-verify"><span class="qc-badge" id="hm-qc">Unverified preview</span><span id="hm-qc-note">Check text, logos and QR codes against your original before production use.</span></p>
+      <div class="result-actions">
+        <a class="cta download" id="hm-download">Download PNG</a>
+        <button class="ghost" id="hm-rerun" type="button" hidden>Re-run redesign</button>
+        <button class="ghost" id="hm-again" type="button">Humanise another image</button>
+      </div>
+    </div>
+    <div class="errorbox" id="hm-errorbox" role="alert" hidden>
+      <p class="error-title">That didn't work.</p>
+      <p id="hm-error-msg"></p>
+      <div class="result-actions">
+        <button class="cta" id="hm-retry" type="button">Try again</button>
+        <button class="ghost" id="hm-startover" type="button">Start over</button>
+      </div>
+    </div>
+    <p class="stage-hint" id="hm-opt-note" hidden>Large image optimised for upload — the original is kept for comparison.</p>
+  </section>
+</div>
+<script type="text/x-deferred-script">
+(function () {
+  var API = 'https://74b9s99x.qwenwork.page/v2';
+  var STAGES = { upload: 'Uploading your image', reading: 'Reading it like a creative director', redesigning: 'Redesigning with a human touch', reviewing: 'Checking facts, text and quality', retrying: 'One more pass to get it right', done: 'Finished', failed: 'Stopped' };
+  var SUBLINES = ['Keeping every name, date, price and logo exactly where it belongs.', 'Rethinking layout, type and colour — not just decorating.', 'Polishing the details a machine would miss.', 'A little less artificial, a little more considered.', 'Reading the hierarchy, then rebuilding it with intent.'];
+  var subTimer = null, subIdx = 0;
+  var memVid = null;
+  function vid() {
+    try {
+      var v = localStorage.getItem('hvid');
+      if (v && /^[0-9a-f-]{36}$/.test(v)) return v;
+      var n = crypto.randomUUID();
+      localStorage.setItem('hvid', n);
+      return n;
+    } catch (e) { return memVid || (memVid = crypto.randomUUID()); }
+  }
+  function $(id) { return document.getElementById(id); }
+  var banner = $('hm-banner'), idle = $('hm-idle'), drop = $('hm-drop'), fileInput = $('hm-file'),
+      empty = $('hm-empty'), preview = $('hm-preview'), previewImg = $('hm-preview-img'), previewCap = $('hm-preview-cap'),
+      go = $('hm-go'), inlineErr = $('hm-inline-error'), working = $('hm-working'), workingThumb = $('hm-working-thumb'),
+      stageEl = $('hm-stage'), result = $('hm-result'), orig = $('hm-orig'), redesigned = $('hm-redesigned'),
+      verify = $('hm-verify'), qc = $('hm-qc'), qcNote = $('hm-qc-note'), download = $('hm-download'),
+      again = $('hm-again'), errorbox = $('hm-errorbox'), errorMsg = $('hm-error-msg'),
+      retry = $('hm-retry'), startover = $('hm-startover'), optNote = $('hm-opt-note'), rerun = $('hm-rerun');
+  if (!drop || !go) return;
+
+  var config = null, file = null, previewUrl = null, jobId = null, pollTimer = null, failCount = 0, lastUpload = null, autoRetried = false;
+
+  function transient(msg) { var e = new Error(msg); e.transient = true; return e; }
+  function isTransient(e) { return e && (e.transient || e instanceof TypeError); }
+  function req(path, opts) {
+    opts = opts || {};
+    opts.headers = Object.assign({ 'x-visitor-id': vid() }, opts.headers);
+    return fetch(API + path, opts).then(function (r) {
+      if ((r.headers.get('content-type') || '').indexOf('application/json') === -1) throw transient('The service is waking up.');
+      return r.json().then(function (d) {
+        if (!r.ok) {
+          var msg = (d && d.message) || 'Request failed.';
+          throw r.status >= 500 ? transient(msg) : new Error(msg);
+        }
+        return d;
+      });
+    });
+  }
+  function canGenerate() { return !!(config && config.connected && config.enabled); }
+  function renderBanner() {
+    var msg = null;
+    if (config && !config.connected) msg = 'The studio is warming up. Generation opens shortly.';
+    else if (config && !config.enabled) msg = 'Humaniser is paused for today. Please check back soon.';
+    if (msg) { banner.textContent = msg; banner.hidden = false; } else { banner.hidden = true; }
+    go.disabled = !file || !canGenerate();
+  }
+  function loadConfig(attempt) {
+    req('/config').then(function (c) { config = c; renderBanner(); }).catch(function (e) {
+      if (isTransient(e) && attempt < 4) { setTimeout(function () { loadConfig(attempt + 1); }, 1500); return; }
+      config = { connected: false, enabled: false }; renderBanner();
+    });
+  }
+  loadConfig(0);
+
+  function show(name) {
+    idle.hidden = name !== 'idle';
+    working.hidden = name !== 'working';
+    result.hidden = name !== 'done';
+    errorbox.hidden = name !== 'error';
+  }
+  function setInlineError(msg) { if (msg) { inlineErr.textContent = msg; inlineErr.hidden = false; } else { inlineErr.hidden = true; } }
+
+  function setFile(f) {
+    if (!f) return;
+    if (['image/png', 'image/jpeg', 'image/webp'].indexOf(f.type) === -1) { setInlineError('Please choose a PNG, JPG or WebP image.'); return; }
+    if (f.size > 10 * 1024 * 1024) { setInlineError('That image is over 10 MB. Please use a smaller file.'); return; }
+    setInlineError(null);
+    file = f;
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewUrl = URL.createObjectURL(f);
+    previewImg.src = previewUrl;
+    previewCap.textContent = f.name + ' · click to replace';
+    empty.hidden = true; preview.hidden = false;
+    drop.classList.add('has-image');
+    go.disabled = !canGenerate();
+  }
+
+  drop.addEventListener('click', function () { fileInput.click(); });
+  drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
+  fileInput.addEventListener('change', function () { setFile(fileInput.files && fileInput.files[0]); fileInput.value = ''; });
+  drop.addEventListener('dragover', function (e) { e.preventDefault(); drop.classList.add('over'); });
+  drop.addEventListener('dragleave', function () { drop.classList.remove('over'); });
+  drop.addEventListener('drop', function (e) { e.preventDefault(); drop.classList.remove('over'); setFile(e.dataTransfer.files && e.dataTransfer.files[0]); });
+
+  function setStage(s) { stageEl.textContent = STAGES[s] || 'Working'; }
+  var stageSub = $('hm-stage-sub');
+  function startSublines() {
+    stopSublines();
+    subIdx = 0;
+    if (stageSub) stageSub.textContent = SUBLINES[0];
+    subTimer = setInterval(function () { subIdx = (subIdx + 1) % SUBLINES.length; if (stageSub) stageSub.textContent = SUBLINES[subIdx]; }, 4000);
+  }
+  function stopSublines() { if (subTimer) { clearInterval(subTimer); subTimer = null; } }
+  function showError(msg) {
+    stopSublines();
+    if (pollTimer) { clearTimeout(pollTimer); pollTimer = null; }
+    errorMsg.textContent = msg;
+    retry.hidden = !file || !canGenerate();
+    show('error');
+  }
+  function showDone(d) {
+    stopSublines();
+    orig.src = previewUrl;
+    redesigned.src = API + '/jobs/' + jobId + '/result';
+    download.href = API + '/jobs/' + jobId + '/download';
+    var ok = d.qcStatus === 'verified';
+    if (rerun) rerun.hidden = ok;
+    qc.textContent = ok ? 'Verified' : 'Unverified preview';
+    qc.className = 'qc-badge' + (ok ? ' ok' : '');
+    verify.className = 'verify-note' + (ok ? ' ok' : '');
+    qcNote.textContent = d.qcNote || 'Check text, logos and QR codes against your original before production use.';
+    show('done');
+  }
+  function tick() {
+    req('/jobs/' + jobId).then(function (d) {
+      failCount = 0;
+      setStage(d.stage);
+      if (d.status === 'done') {
+        var checkMissed = d.qcStatus !== 'verified' && /could not run|couldn't run|did not run|unavailable/i.test(d.qcNote || '');
+        if (checkMissed && !autoRetried && lastUpload) {
+          autoRetried = true;
+          stageEl.textContent = 'Quality check missed — running once more';
+          uploadWithRetry(lastUpload.blob, lastUpload.mime).then(function (d2) {
+            jobId = d2.jobId;
+            failCount = 0;
+            pollTimer = setTimeout(tick, 1500);
+          }).catch(function () { showDone(d); });
+          return;
+        }
+        showDone(d);
+        return;
+      }
+      if (d.status === 'failed') { showError(d.error || 'The redesign could not be completed.'); return; }
+      pollTimer = setTimeout(tick, 2500);
+    }).catch(function (e) {
+      if (isTransient(e) && failCount < 12) { failCount += 1; pollTimer = setTimeout(tick, 3000); return; }
+      showError(isTransient(e) ? 'Lost contact with the server. Please try again.' : (e.message || 'Connection problem.'));
+    });
+  }
+  var PREP_LIMIT = 950 * 1024;
+  function optimizeImage() {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () {
+        var base = Math.min(1, 2600 / Math.max(img.width, img.height));
+        var attempts = [];
+        [1, 0.8, 0.64].forEach(function (s) { [0.92, 0.85, 0.75].forEach(function (q) { attempts.push({ s: s, q: q }); }); });
+        var i = 0;
+        function draw(scale) {
+          var w = Math.max(1, Math.round(img.width * scale)), h = Math.max(1, Math.round(img.height * scale));
+          var c = document.createElement('canvas'); c.width = w; c.height = h;
+          c.getContext('2d').drawImage(img, 0, 0, w, h);
+          return c;
+        }
+        function tryNext() {
+          if (i >= attempts.length) {
+            var c = draw(base * 0.64);
+            var ctx = c.getContext('2d');
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+            c.toBlob(function (b) {
+              if (b && b.size <= PREP_LIMIT) resolve({ blob: b, mime: b.type || 'image/jpeg', optimized: true });
+              else reject(new Error('That image is too large to upload even after optimising. Please export a smaller version.'));
+            }, 'image/jpeg', 0.85);
+            return;
+          }
+          var a = attempts[i++];
+          draw(base * a.s).toBlob(function (b) {
+            if (b && b.size <= PREP_LIMIT) resolve({ blob: b, mime: b.type || 'image/webp', optimized: true });
+            else tryNext();
+          }, 'image/webp', a.q);
+        }
+        tryNext();
+      };
+      img.onerror = function () { reject(new Error('Could not read that image. Please try a different file.')); };
+      img.src = previewUrl;
+    });
+  }
+  function prepareUpload() {
+    if (file.size <= PREP_LIMIT) return Promise.resolve({ blob: file, mime: file.type, optimized: false });
+    return optimizeImage();
+  }
+  function uploadWithRetry(blob, mime) {
+    var attempt = 0;
+    function go() {
+      return req('/humanise', { method: 'POST', headers: { 'content-type': mime }, body: blob }).catch(function (e) {
+        if (isTransient(e) && attempt < 2) { attempt += 1; return new Promise(function (r) { setTimeout(r, 1500 * (attempt + 1)); }).then(go); }
+        throw e;
+      });
+    }
+    return go();
+  }
+  function generate() {
+    if (!file || !canGenerate()) return;
+    autoRetried = false;
+    setInlineError(null);
+    workingThumb.src = previewUrl;
+    setStage('upload');
+    stageEl.textContent = 'Preparing your image';
+    show('working');
+    startSublines();
+    prepareUpload().then(function (up) {
+      lastUpload = up;
+      if (optNote) optNote.hidden = !up.optimized;
+      stageEl.textContent = STAGES.upload;
+      return uploadWithRetry(up.blob, up.mime);
+    }).then(function (d) {
+      jobId = d.jobId;
+      failCount = 0;
+      pollTimer = setTimeout(tick, 1500);
+    }).catch(function (e) {
+      if (isTransient(e)) { setInlineError('Couldn’t reach the studio. Please check your connection and tap Humanise My Image again.'); show('idle'); return; }
+      showError(e.message || 'Upload failed.');
+    });
+  }
+  function reset() {
+    stopSublines();
+    if (pollTimer) { clearTimeout(pollTimer); pollTimer = null; }
+    if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
+    file = null; jobId = null;
+    previewImg.removeAttribute('src'); preview.hidden = true; empty.hidden = false;
+    drop.classList.remove('has-image');
+    setInlineError(null);
+    if (optNote) optNote.hidden = true;
+    go.disabled = true;
+    show('idle');
+  }
+  go.addEventListener('click', generate);
+  retry.addEventListener('click', generate);
+  again.addEventListener('click', reset);
+  if (rerun) rerun.addEventListener('click', generate);
+  startover.addEventListener('click', reset);
+})();
+</script>
+</main>
+<style>.hm-colophon-wrap{max-width:1060px;margin:0 auto;padding:32px clamp(18px,4vw,48px) 44px;box-sizing:border-box}.hm-colophon{font-size:13px;color:#6f6555;display:flex;gap:10px;flex-wrap:wrap;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif}.hm-f-legal{font-size:12px;padding-top:14px;font-family:'Schibsted Grotesk','Helvetica Neue',sans-serif}.hm-f-legal a{color:#6f6555;margin-right:14px}@media(max-width:720px){.hm-colophon-wrap{padding:20px clamp(18px,4vw,48px) 28px}}.hm-colophon{justify-content:center}.hm-f-legal{text-align:center}</style><div class="hm-colophon-wrap"><div class="hm-colophon"><span>No account. No settings. One image in, one image out.</span></div><div class="hm-f-legal"><a href="/terms">Terms and Conditions</a><a href="/privacy">Privacy Policy</a></div></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "humaniser-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CORS API proxy connecting the UnAI Humaniser Hashmeta site to its image-redesign backend",
+  "main": "server.js"
+}
