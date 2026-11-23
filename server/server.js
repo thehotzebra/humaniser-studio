@@ -9,7 +9,7 @@ const UPSTREAM = 'https://ry4gy5qr.qwenwork.page';
 const UPSTREAM2 = 'https://2y9cx4z2.qwenwork.page';
 const PORT = process.env.PORT || 8081;
 const MAX_BYTES = 11 * 1024 * 1024; // 10 MB image + margin
-const ALLOWED_ORIGINS = new Set(['https://unai-humaniser.geo.hashmeta.tech']);
+const ALLOWED_ORIGINS = new Set(['https://unai-humaniser.geo.hashmeta.tech', 'https://thehotzebra.github.io']);
 
 function cors(req, res) {
   const origin = req.headers.origin || '';
